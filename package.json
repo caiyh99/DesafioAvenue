@@ -1,6 +1,6 @@
 {
-  "name": "cucumber-ts-starter",
-  "version": "6.0.0",
+  "name": "Trello E2E",
+  "version": "1.0.0.0",
   "description": "Starter project to write and debug cucumber-js features in TypeScript language",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "tsc-init": "tsc --init",
     "tsc": "tsc"
   },
-  "author": "Henri d'Orgeval",
+  "author": "Caique Nunes",
   "license": "ISC",
   "dependencies": {
     "@types/cucumber": "6.0.1",
