@@ -6,9 +6,14 @@ Feature: Cards
     Cases:
     -Creating a card with success
     -Update a existing card
-    -Try to update a card that is inexistent and expect an error
+    -Try to update a card that is nonexistent and expect an error
     -Delete a card that exists
-    -Try to delete an inexistent card and exepect an error
+    -Try to delete an nonexistent card and expect an error
+
+  Scenario: Searching a card with success
+    Given I try to search a card
+    When i make the call
+    Then is expected the status code 200
 
   Scenario: Creating a card with success
     Given I try to create a card
@@ -20,7 +25,7 @@ Feature: Cards
     When i make the call
     Then is expected the status code 200
 
-  Scenario: Try to update a card that is inexistent and expect an error
+  Scenario: Try to update a card that is nonexistent and expect an error
     Given I try to update a card
     When I make the call
     Then is expected the status code 404
@@ -30,7 +35,7 @@ Feature: Cards
     When i make the call
     Then is expected the status code 200
 
-  Scenario: Try to delete an inexistent card and exepect an error
+  Scenario: Try to delete an nonexistent card and expect an error
     Given I try to delete a card
     When i make the call
     Then is expected the status code 404
