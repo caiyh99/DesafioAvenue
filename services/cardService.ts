@@ -12,7 +12,7 @@ export class CardService implements Service<Card> {
 
   private client;
 
-  async create(obj: Card): Promise<Card> {
+  async create(obj: Card, statusCode = 200): Promise<Card> {
     const request = await this.client
       .post('/')
       .set('Accept', 'application/json')
@@ -22,24 +22,23 @@ export class CardService implements Service<Card> {
         idList: this.params.idList,
       })
       .send(obj)
-      .expect(200);
+      .expect(statusCode);
     return request.body as Card;
   }
 
-  async findOne(id: string): Promise<Card> {
+  async findOne(id: string, statusCode = 200): Promise<Card> {
     const request = await this.client
       .get(`/${id}`)
       .set('Accept', 'application/json')
       .query({
         key: this.params.key,
         token: this.params.token,
-        idList: this.params.idList,
       })
-      .expect(200);
+      .expect(statusCode);
     return request.body as Card;
   }
 
-  async delete(id: string) {
+  async delete(id: string, statusCode = 200) {
     const request = await this.client
       .delete(`/${id}`)
       .set('Accept', 'application/json')
@@ -47,11 +46,11 @@ export class CardService implements Service<Card> {
         key: this.params.key,
         token: this.params.token,
       })
-      .expect(200);
+      .expect(statusCode);
     return request.body as Card;
   }
 
-  async update(id: string, obj: Card): Promise<Card> {
+  async update(id: string, obj: Card, statusCode = 200): Promise<Card> {
     const request = await this.client
       .put(`/${id}`)
       .set('Accept', 'application/json')
@@ -61,7 +60,7 @@ export class CardService implements Service<Card> {
         idList: this.params.idList,
       })
       .send(obj)
-      .expect(200);
+      .expect(statusCode);
     return request.body as Card;
   }
 }

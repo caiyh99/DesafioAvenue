@@ -1,4 +1,5 @@
 export interface List {
+  id?: string;
   name: string;
   idBoard: string;
   idListSource?: string;

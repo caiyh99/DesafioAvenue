@@ -1,4 +1,5 @@
 export interface Card {
+  id?: string;
   name?: string;
   desc?: string;
   pos?: string;
@@ -13,6 +14,7 @@ export interface Card {
   address?: string;
   locationName?: string;
   coordinates?: string;
+  idList?: string;
 }
 
 export interface CardParams {

@@ -1,7 +1,6 @@
 import { Service } from './index';
 import { List, ListParams } from '../domains/lists/list';
 import supertest from 'supertest';
-import {Board} from "../domains/boards/board";
 
 export class ListService implements Service<List> {
   private params: ListParams;
@@ -14,16 +13,18 @@ export class ListService implements Service<List> {
   private client;
 
   async create(obj: List): Promise<List> {
-    const request = await this.client
+    const response = await this.client
       .post('/')
       .set('Accept', 'application/json')
       .query({
         key: this.params.key,
         token: this.params.token,
+        idBoard: obj.idBoard,
+        name: obj.name,
       })
-      .send(obj)
+      .send()
       .expect(200);
-    return request.body as List;
+    return response.body as List;
   }
 
   async findOne(id: string): Promise<List> {
@@ -61,6 +62,6 @@ export class ListService implements Service<List> {
         value: 'true',
       })
       .expect(200);
-    return request.body as Board;
+    return request.body as List;
   }
 }
