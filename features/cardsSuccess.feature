@@ -8,6 +8,7 @@ Feature: Cards Successful
     -Update a existing card
     -Delete a card that exists
     -Search a card
+    -Archive a list with success
 
 
   Scenario: Creating a card with success
