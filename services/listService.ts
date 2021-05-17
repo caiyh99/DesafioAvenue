@@ -64,4 +64,17 @@ export class ListService implements Service<List> {
       .expect(200);
     return request.body as List;
   }
+
+  async archive(id: string, obj: List): Promise<List> {
+    const request = await this.client
+      .put(`/${id}/closed`)
+      .set('Accept', 'application/json')
+      .query({
+        key: this.params.key,
+        token: this.params.token,
+      })
+      .send(obj)
+      .expect(200);
+    return request.body as List;
+  }
 }

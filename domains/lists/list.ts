@@ -6,6 +6,7 @@ export interface List {
   pos?: string | number;
   fields?: string;
   value?: string;
+  closed?: boolean;
 }
 
 export interface ListParams {
