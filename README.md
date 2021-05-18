@@ -16,4 +16,5 @@ A melhor forma de rodar os testes é com o comando `npm run test`, pois o mesmo 
 
 Caso queira rodar um cenário isolado, adicione a tag `@only` no cenário desejado e rode com `npm run only`
 
+É possivel gerar um arquivo .html com o relatório do último teste rodado com o comando `npm run report` um navegador irá abrir e mostrar o relatório.
 
