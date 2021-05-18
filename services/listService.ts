@@ -7,7 +7,7 @@ export class ListService implements Service<List> {
 
   constructor(params: ListParams) {
     this.params = params;
-    this.client = supertest('https://api.trello.com/1/lists');
+    this.client = supertest(`${process.env.API_TRELLO_URL}/lists`);
   }
 
   private client;

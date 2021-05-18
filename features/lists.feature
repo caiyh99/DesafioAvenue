@@ -25,6 +25,7 @@ Feature: Lists
     And I create a list
     When I try to archive a list
     Then the list is archived
+
 @only
   Scenario: Unarchive a list
     Given I have created a board

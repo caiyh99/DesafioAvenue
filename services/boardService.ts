@@ -7,7 +7,7 @@ export class BoardService implements Service<Board> {
 
   constructor(params: BoardParams) {
     this.params = params;
-    this.client = supertest('https://api.trello.com/1/boards');
+    this.client = supertest(`${process.env.API_TRELLO_URL}/boards`);
   }
 
   private client;
